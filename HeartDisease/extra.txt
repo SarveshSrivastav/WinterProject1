@@ -1,0 +1,104 @@
+'''countT = 0     
+  correctT = 0
+  for val in decisionTreePredictions:
+    if val == y_test[countT]:
+      correctT += 1
+    countT += 1
+  
+  percent = "%s" % (round(100*(correctT/len(y_test)),2)) + "% accuracy of Decision Tree Model"
+  print(percent)
+  print("count: " + str(countT))
+  print("Number correct: " + str(correctT))
+  return "Done!"'''
+
+  #Importing data and creating datasets 
+dataset = pd.read_csv('heart.csv')
+X = dataset.iloc[:, :-1].values
+y = dataset.iloc[:, -1].values
+
+
+# Splitting Data
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
+
+# Feature Scaling
+sc = StandardScaler()
+X_train = sc.fit_transform(X_train)
+X_test = sc.transform(X_test)
+
+# Logistic Regression
+logModel = LogisticRegression()
+decisionTreeModel = DecisionTreeClassifier()
+
+# Linear Regression
+linearModel = LinearRegression()
+linearModel.fit(X, y)
+
+# Polynomial Regression
+poly_reg = PolynomialFeatures(degree = 4)
+X_poly = poly_reg.fit_transform(X)
+lin_reg_2 = LinearRegression()
+lin_reg_2.fit(X_poly, y)
+
+# Training Models
+decisionTreeModel.fit(X_train, y_train)
+logModel.fit(X_train, y_train)
+
+# Testing Model/Predicting Model
+predictions = decisionTreeModel.predict( X_test )
+predictions1 = logModel.predict( X_test )
+
+
+# print(predictions)
+
+# countT = 0     
+# correctT = 0
+# for val in predictions:
+#   if val == y_test[countT]:
+#         correctT += 1
+#   countT += 1
+  
+# print(countT)
+# print(correctT)
+
+# countL = 0     
+# correctL = 0
+# for val in predictions:
+#   if val == y_test[countL]:
+#         correctL += 1
+#   countL += 1
+  
+# print(countL)
+# print(correctL)
+
+# countP = 0     
+# correctP = 0
+# for val in predictions:
+#   if val == y_test[countP]:
+#         correctP += 1
+#   countP += 1
+  
+# print(countP)
+# print(correctP)
+
+<input name="q" type="text" placeholder="Search…" value="" autocomplete="off" maxlength="240" class="s-input s-input__search js-search-field " aria-label="Search" aria-controls="top-search" data-controller="s-popover" data-action="focus->s-popover#show" data-s-popover-placement="bottom-start">
+
+<div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+
+                <style>
+    footer {text-align: center;}
+    img {display: block; margin-left: auto; margin-right: auto;}
+</style>
+
+<h1>iluvchildren's Minecraft stats</h1>
+
+<p>Hello, my name is iluvchildren on minecraft. I mainly play bedwars and bridge duels. If you have gone against me then
+	you know I am the worst player to have ever entered the hypixel server. Here are some of my highlights. I also play Valorant
+	(P.S. I suck at that too).</p>
+
+<h2> Enjoy the content </h2>
+
+<img src="https://cdn.discordapp.com/attachments/760607619194290189/793270383520120872/IMG_1839.jpg" alt="Ani" width="80%" height="80%">
+
+<footer style="background-color:#2b2d2f;", style= "color:#FFFFFF;"><b> Anirudh is homo</b></footer>

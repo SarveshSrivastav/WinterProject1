@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Heart Disease</title>
+      <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+      <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Repl.it_logo.svg/220px-Repl.it_logo.png">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </head>
+    <body>
+	  
+        <div class="container">
+	  
+		<!--────────────────Header───────────────-->
+	<header>
+		<a class="logo" href="{{ url_for('home') }}">
+              <img src="https://document-export.canva.com/DAEJNQ_nc-s/33/thumbnail/Fz2k7_TBAEqFHt8lOzPA4A-0001-11471469676.png" alt="og elite nemo logo" />
+		</a>
+		<nav>
+      <div class="navbar-nav mr-auto">	
+        <ul class="nav-bar">
+          <li><a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a></li>
+          <li><a class="nav-item nav-link" href="{{ url_for('heart') }}">Heart</a></li>
+          <li><a class="nav-item nav-link" href="{{ url_for('sarvesh') }}">Sarvesh</a></li>
+          <li><a class="nav-item nav-link" href="{{ url_for('yash') }}">Yash</a></li>
+          <li><a class="nav-item nav-link" href="{{ url_for('graphs') }}">Graphs</a></li>
+          <li><a class="nav-item nav-link" href="{{ url_for('clips') }}">Clips</a></li>
+        </ul>
+     </div>
+			
+			<div class="hamburger">
+				<div class="line1"></div>
+            <div class="line2"></div>
+				<div class="line3"></div>
+			</div>
+		</nav>
+	</header>
+		  
+		
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-md-64">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </main>
+
+    <div>
+	  <footer class="copyright">
+		  <a href="https://discord.gg/aDQCGSzfZh" target="_blank"> Anirudh Addepali, Yash Dubey, Abhiram Pasupuleti, Sarvesh Srivastav.</a>
+     </footer>
+     </div>
+	  
+  </div>
+  </body>
+</html>
